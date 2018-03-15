@@ -1,0 +1,53 @@
+table
+{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fff9eb+0,fff9eb+49,f2d6a4+50,f2d6a4+100 */
+background: #fff9eb; /* Old browsers */
+background: -moz-linear-gradient(left, #fff9eb 0%, #fff9eb 49%, #f2d6a4 50%, #f2d6a4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #fff9eb 0%,#fff9eb 49%,#f2d6a4 50%,#f2d6a4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #fff9eb 0%,#fff9eb 49%,#f2d6a4 50%,#f2d6a4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff9eb', endColorstr='#f2d6a4',GradientType=1 ); /* IE6-9 */
+border-collapse: collapse;
+display: table-cell;
+padding: 22px;
+}
+
+table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table tr:first-child {
+    background: none;
+    border: none;
+}
+
+table tr {
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.alltr{
+    background-color: #fff;
+    float: left;
+    width: 80px;
+}
+.circle{
+    background-color: #fff;
+    border-radius: 60px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+
+}
+.first-th{
+    color: black;
+}
+
+.second-th {
+  color: black;
+}
+
+.alltd{
+    border: 1px solid red;
+}
