@@ -1,58 +1,86 @@
 function loadJSON() {
 
-  jQuery(document).ready(function() {
-                     jQuery.getJSON('data/pushvailability-test-export.json', function(data) {
-                          var output="";
-                          jQuery.each(data.users, function(index, element) {
-                              var time = moment(element.lastUpdated).format('dddd');
-                              var timeday = moment(element.lastUpdated).day();
-                              var today = moment().day();
-                              var first_el =  Math.abs(parseFloat(timeday) - parseFloat(today));
-                              var toda     = element.availabilityArray[first_el];
-                              var sum = element.availabilityArray.reduce((previous, current) => current += previous);
-                              var avg = sum / element.availabilityArray.length;
-                              var fullavg = Math.round(sum / element.availabilityArray.length);
-                              if(avg > fullavg){
-                                  var sig = '>';
-                              }else{
-                                  var sig = '<';
-                              }
-                              if(toda == 1){
-                                  var color = 'green';
-                              }else if(toda == 2){
-                                  var color = 'lightgreen';
-                              }else if(toda == 3){
-                                  var color = 'yellow';
-                              }else if(toda == 4){
-                                  var color = 'orange';
-                              }else if(toda == 5){
-                                  var color = 'red';
-                              }else{
-                                  var color = 'red';
-                              }
-                              if(fullavg == 1){
-                                  var avgcolor = 'green';
-                              }else if(fullavg == 2){
-                                  var avgcolor = 'lightgreen';
-                              }else if(fullavg == 3){
-                                  var avgcolor = 'yellow';
-                              }else if(fullavg == 4){
-                                  var avgcolor = 'orange';
-                              }else if(fullavg == 5){
-                                  var avgcolor = 'red';
-                              }else{
-                                  var avgcolor = 'red';
-                              }
+    jQuery(document).ready(()=> {
+        jQuery.getJSON('data/pushvailability-test-export.json', (data) => {
+          let output = [];
+            const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length
+            for (var key in data.users) {
+                const start = moment(data.users[key].lastUpdated);
+                const end = moment();
+                const range = moment.range(start, end);
+                const days = range.diff('days');
 
-                              output+="<tr>";
-                              output+="<td><div class='circle' style='background:"+color+"'>" + toda+ "</span></td>";
-                              output+="<td>" + element.name+ "</td>";
-                              output+="<td><div class='circle' style='background:"+avgcolor+"'>" +sig+' '+ fullavg+ "</span></td>";
-                              output+="</tr>";
-                          });
 
-                          jQuery('table').append(output);
-                      });
+     //populate an array with on only absent equals to false
+     //insert it in if condition
 
-                  });
+
+                if (days >= 0 && days < 7) {
+                    let result = {
+                        today: null,
+                        average: null,
+                        name: null,
+                        absent: null
+                    }
+
+                    var tod = result.today = data.users[key].availabilityArray[days]
+                    var ave = result.average = arrAvg(data.users[key].availabilityArray.splice(days + 1))
+                    var roundedAve = Math.round(ave)
+                    var nam = result.name = data.users[key].name
+                    var absentVal = result.absent = data.users[key].absent
+            //        output.push(result);
+
+                   console.log('The output is :', output);
+                   console.log('The result is :', result);
+
+                }
+
+//Setting Color Codes for Availability
+                if (tod == 1) {
+                    var color = 'green';
+                } else if (tod == 2) {
+                    var color = 'lightgreen';
+                } else if (tod == 3) {
+                    var color = 'yellow';
+                } else if (tod == 4) {
+                    var color = 'orange';
+                } else if (tod == 5) {
+                    var color = 'red';
+                } else {
+                    var color = 'red';
+                }
+                if (roundedAve == 1) {
+                    var avgcolor = 'green';
+                } else if (roundedAve == 2) {
+                    var avgcolor = 'lightgreen';
+                } else if (roundedAve == 3) {
+                    var avgcolor = 'yellow';
+                } else if (roundedAve == 4) {
+                    var avgcolor = 'orange';
+                } else if (roundedAve == 5) {
+                    var avgcolor = 'red';
+                } else {
+                    var avgcolor = 'red';
+                }
+
+
+
+                  output += "<tr>";
+                  output += "<td><div class='circle' style='background:" + color + "'>" + tod + "</span></td>";
+                  output += "<td>" + nam + "</td>";
+                  output += "<td><div class='circle' style='background:" + avgcolor + "'>" + roundedAve + "</span></td>";
+                  output += "</tr>";
+
+
+
+
+            }
+//console.log(output);
+                $('table').append(output);
+
+
+        });
+
+    });
+
 }
