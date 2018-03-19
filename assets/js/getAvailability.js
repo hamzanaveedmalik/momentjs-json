@@ -1,18 +1,14 @@
 function loadJSON() {
 
-    jQuery(document).ready(()=> {
+    jQuery(document).ready(() => {
         jQuery.getJSON('data/pushvailability-test-export.json', (data) => {
-          let output = [];
+            let output = [];
             const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length
             for (var key in data.users) {
                 const start = moment(data.users[key].lastUpdated);
                 const end = moment();
                 const range = moment.range(start, end);
                 const days = range.diff('days');
-
-
-     //populate an array with on only absent equals to false
-     //insert it in if condition
 
 
                 if (days >= 0 && days < 7) {
@@ -28,55 +24,59 @@ function loadJSON() {
                     var roundedAve = Math.round(ave)
                     var nam = result.name = data.users[key].name
                     var absentVal = result.absent = data.users[key].absent
-            //        output.push(result);
 
-                   console.log('The output is :', output);
-                   console.log('The result is :', result);
+
+          //          console.log('The result is ', result);
+
+                    if (absentVal == false) {
+                        output.push(result)
+                    }
 
                 }
-
-//Setting Color Codes for Availability
-                if (tod == 1) {
-                    var color = 'green';
-                } else if (tod == 2) {
-                    var color = 'lightgreen';
-                } else if (tod == 3) {
-                    var color = 'yellow';
-                } else if (tod == 4) {
-                    var color = 'orange';
-                } else if (tod == 5) {
-                    var color = 'red';
-                } else {
-                    var color = 'red';
-                }
-                if (roundedAve == 1) {
-                    var avgcolor = 'green';
-                } else if (roundedAve == 2) {
-                    var avgcolor = 'lightgreen';
-                } else if (roundedAve == 3) {
-                    var avgcolor = 'yellow';
-                } else if (roundedAve == 4) {
-                    var avgcolor = 'orange';
-                } else if (roundedAve == 5) {
-                    var avgcolor = 'red';
-                } else {
-                    var avgcolor = 'red';
-                }
-
-
-
-                  output += "<tr>";
-                  output += "<td><div class='circle' style='background:" + color + "'>" + tod + "</span></td>";
-                  output += "<td>" + nam + "</td>";
-                  output += "<td><div class='circle' style='background:" + avgcolor + "'>" + roundedAve + "</span></td>";
-                  output += "</tr>";
-
-
 
 
             }
-//console.log(output);
-                $('table').append(output);
+            //console.log(output);
+            // console.log('The output is ',output);
+            // console.log('The first output is ', output[0].name);
+            // console.log('The output count is ', output.length);
+
+
+            for (var a = 0; a < output.length; a++) {
+
+
+                if (output[a].today == 1) {
+                    var color = 'green';
+                } else if (output[a].today == 2) {
+                    var color = 'lightgreen';
+                } else if (output[a].today == 3) {
+                    var color = 'yellow';
+                } else if (output[a].today == 4) {
+                    var color = 'orange';
+                } else if (output[a].today == 5) {
+                    var color = 'red';
+                } else {
+                    var color = 'red';
+                }
+                if (output[a].average == 1) {
+                    var avgcolor = 'green';
+                } else if (output[a].average == 2) {
+                    var avgcolor = 'lightgreen';
+                } else if (output[a].average == 3) {
+                    var avgcolor = 'yellow';
+                } else if (output[a].average == 4) {
+                    var avgcolor = 'orange';
+                } else if (output[a].average == 5) {
+                    var avgcolor = 'red';
+                } else {
+                    var avgcolor = 'yellow';
+                }
+
+
+
+                $('table').append("<tr><td><div class='circle' style='background:" + color + "'>" + output[a].today + "</span></td><td>" + output[a].name + "</td> <td><div class='circle' style='background:" + avgcolor + "'>" + output[a].average + "</span></td></tr>")
+
+            }
 
 
         });
