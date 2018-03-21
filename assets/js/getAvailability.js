@@ -3,13 +3,19 @@ function loadJSON() {
     jQuery(document).ready(() => {
         jQuery.getJSON('data/pushvailability-test-export.json', (data) => {
             let output = [];
-            const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length
+           const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length
+
+
+
             for (var key in data.users) {
                 const start = moment(data.users[key].lastUpdated);
+          //      data.users[key]
+            //    console.log('Number of Nodes in JSON file is : ', data.user.length);
                 const end = moment();
                 const range = moment.range(start, end);
+//console.log(range);
                 const days = range.diff('days');
-
+            //    console.log('Days are ',days);
 
                 if (days >= 0 && days < 7) {
                     let result = {
@@ -21,22 +27,34 @@ function loadJSON() {
 
                     var tod = result.today = data.users[key].availabilityArray[days]
                     var ave = result.average = arrAvg(data.users[key].availabilityArray.splice(days + 1))
-                    var roundedAve = Math.round(ave)
+                  //  var roundedAve = Math.round(ave)
                     var nam = result.name = data.users[key].name
                     var absentVal = result.absent = data.users[key].absent
 
 
-          //          console.log('The result is ', result);
-
+              //     console.log('The average is ', ave);
                     if (absentVal == false) {
                         output.push(result)
                     }
 
                 }
 
+                else {
+
+                  let altResult = {
+                    today:'None',
+                    average: 'None',
+                    name:'No person found',
+
+                  }
+                  output.push(altResult);
+                  break;
+                }
+
 
             }
-            //console.log(output);
+            console.log('The output is ',output);
+
             // console.log('The output is ',output);
             // console.log('The first output is ', output[0].name);
             // console.log('The output count is ', output.length);
