@@ -48,6 +48,7 @@ function loadJSON() {
 
                   }
                   output.push(altResult);
+                  alert("Users' Data hasn't been updated in last 7 days");
                   break;
                 }
 
