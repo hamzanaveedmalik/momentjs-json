@@ -1,101 +1,70 @@
 function loadJSON() {
-
-    jQuery(document).ready(() => {
-        jQuery.getJSON('data/pushvailability-test-export.json', (data) => {
+    jQuery(document).ready(function() {
+        jQuery.getJSON('data/newdata.json', function(data) {
+            const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length
             let output = [];
-           const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length
-
-
-
             for (var key in data.users) {
+                //   console.log(data.users.names)
                 const start = moment(data.users[key].lastUpdated);
-          //      data.users[key]
-            //    console.log('Number of Nodes in JSON file is : ', data.user.length);
                 const end = moment();
                 const range = moment.range(start, end);
-//console.log(range);
                 const days = range.diff('days');
-            //    console.log('Days are ',days);
 
                 if (days >= 0 && days < 7) {
                     let result = {
                         today: null,
                         average: null,
-                        name: null,
-                        absent: null
+                        name: null
                     }
 
                     var tod = result.today = data.users[key].availabilityArray[days]
                     var ave = result.average = arrAvg(data.users[key].availabilityArray.splice(days + 1))
-                  //  var roundedAve = Math.round(ave)
+                    var roundedAve = Math.round(ave)
                     var nam = result.name = data.users[key].name
-                    var absentVal = result.absent = data.users[key].absent
+                    var absent = data.users[key].absent
+                    console.log('The results are :', result);
 
+               
 
-              //     console.log('The average is ', ave);
-                    if (absentVal == false) {
-                        output.push(result)
-                    }
-
-                }
-
-                else {
-
-                  let altResult = {
-                    today:'None',
-                    average: 'None',
-                    name:'No person found',
-
-                  }
-                  output.push(altResult);
-                  alert("Users' Data hasn't been updated in last 7 days");
-                  break;
-                }
-
-
-            }
-            console.log('The output is ',output);
-
-            // console.log('The output is ',output);
-            // console.log('The first output is ', output[0].name);
-            // console.log('The output count is ', output.length);
-
-
-            for (var a = 0; a < output.length; a++) {
-
-
-                if (output[a].today == 1) {
+//Setting Color Codes for Availability
+                if (tod == 1) {
                     var color = 'green';
-                } else if (output[a].today == 2) {
+                } else if (tod == 2) {
                     var color = 'lightgreen';
-                } else if (output[a].today == 3) {
+                } else if (tod == 3) {
                     var color = 'yellow';
-                } else if (output[a].today == 4) {
+                } else if (tod == 4) {
                     var color = 'orange';
-                } else if (output[a].today == 5) {
+                } else if (tod == 5) {
                     var color = 'red';
                 } else {
                     var color = 'red';
                 }
-                if (output[a].average == 1) {
+                if (roundedAve == 1) {
                     var avgcolor = 'green';
-                } else if (output[a].average == 2) {
+                } else if (roundedAve == 2) {
                     var avgcolor = 'lightgreen';
-                } else if (output[a].average == 3) {
+                } else if (roundedAve == 3) {
                     var avgcolor = 'yellow';
-                } else if (output[a].average == 4) {
+                } else if (roundedAve == 4) {
                     var avgcolor = 'orange';
-                } else if (output[a].average == 5) {
+                } else if (roundedAve == 5) {
                     var avgcolor = 'red';
                 } else {
-                    var avgcolor = 'yellow';
+                    var avgcolor = 'red';
                 }
 
-
-
-                $('table').append("<tr><td><div class='circle' style='background:" + color + "'>" + output[a].today + "</span></td><td>" + output[a].name + "</td> <td><div class='circle' style='background:" + avgcolor + "'>" + output[a].average + "</span></td></tr>")
-
+                if(absent == false){
+                    output += "<tr>";
+                    output += "<td><div class='circle' style='background:" + color + "'>" + tod + "</span></td>";
+                    output += "<td>" + nam + "</td>";
+                    output += "<td><div class='circle' style='background:" + avgcolor + "'>" + roundedAve + "</span></td>";
+                    output += "</tr>";
+                }
+                }
             }
+            jQuery('table').append(output);
+
 
 
         });
