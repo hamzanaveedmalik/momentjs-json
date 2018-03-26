@@ -3,7 +3,7 @@
     "2o8XIHnKMoada5lN0Dzbn8Wy4Dt2" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 6, 4, 3, 5, 5 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Paul",
       "note" : "Grds. Montag bis Mittwoch lang; Donnerstag und Freitag kurz (15:00 Uhr)",
       "panicking" : false,
@@ -12,7 +12,7 @@
     "6uhTYeRlTgNdhUC4kNGckf5gc2c2" : {
       "absent" : true,
       "availabilityArray" : [ 4, 4, 4, 1, 0, 2, 3 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "David",
       "note" : "Freitag in Hamburg, Montag (5.3.) Urlaub",
       "panicking" : false,
@@ -21,7 +21,7 @@
     "9fqaUX5LT7QZJsZ6Z0jyi872tPd2" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 4, 4, 4, 3, 2 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Kim",
       "note" : "",
       "panicking" : false,
@@ -39,7 +39,7 @@
     "AlLERyLyh0cBaOzeg143RrrmQN42" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 4, 4, 4, 3, 1 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Alice",
       "note" : "",
       "panicking" : false,
@@ -48,7 +48,7 @@
     "Cys1PydRMKYPwAZPpVz8ijVdwCc2" : {
       "absent" : false,
       "availabilityArray" : [ 3, 4, 3, 4, 4, 1, 3 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Tim",
       "note" : "",
       "panicking" : false,
@@ -57,7 +57,7 @@
     "EW3DUO9w5AYBwW6w3I5AazDiEFO2" : {
       "absent" : false,
       "availabilityArray" : [ 1, 3, 4, 3, 3, 3, 2 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "James",
       "note" : "",
       "panicking" : false,
@@ -75,7 +75,7 @@
     "FRopJntE4qQn5RwtK5eaxV9vNCN2" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 4, 4, 4, 2, 1 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Jonas",
       "note" : "Neue Aufgaben bitte nur nach Abstimmung mit WIT/KEI",
       "panicking" : false,
@@ -84,7 +84,7 @@
     "FaDCeS4icNeVlfFVZINHolBKowv2" : {
       "absent" : true,
       "availabilityArray" : [ 4, 3, 2, 2, 4, 4, 4 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Christian",
       "note" : "5.3. und 9.3. Urlaub",
       "panicking" : false,
@@ -103,7 +103,7 @@
     "HUVSxLytL1WN1nHSg1BzUBZ5Km53" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 3, 3, 4, 3, 4 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Elisa",
       "note" : "In der Regel von 8.15 bis mindestens 15.15 Uhr im Büro, sonst mobil\n\n",
       "panicking" : false,
@@ -121,7 +121,7 @@
     "Ud7KD62Uv2aUZLlPlxwQPQXY8jC2" : {
       "absent" : false,
       "availabilityArray" : [ 5, 4, 4, 4, 4, 4, 5 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Frederic",
       "note" : "",
       "panicking" : false,
@@ -130,7 +130,7 @@
     "X5smaDorkrb78Nn5zFoj5QOWfTZ2" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 4, 4, 4, 5, 5 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Robin",
       "note" : "\n",
       "panicking" : false,
@@ -139,7 +139,7 @@
     "c242BvJctTRmJDDO87HaGcQovLw2" : {
       "absent" : false,
       "availabilityArray" : [ 5, 5, 4, 4, 4, 4, 4 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "William",
       "note" : "",
       "panicking" : false,
@@ -166,7 +166,7 @@
     "hQhgZeop3wYDKzeNoZwfljXFJKL2" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 4, 3, 3, 5, 5 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Lisa",
       "note" : "",
       "panicking" : false
@@ -183,7 +183,7 @@
     "mHs9qpa0b3MK7DPcPqoGBhIbwtr1" : {
       "absent" : false,
       "availabilityArray" : [ 4, 4, 4, 4, 3, 5, 5 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "John",
       "note" : "12./13.03. Urlaub",
       "panicking" : false
@@ -191,7 +191,7 @@
     "nwVxpzsfiadu4bjUThlpNdrZdCb2" : {
       "absent" : false,
       "availabilityArray" : [ 3, 5, 5, 3, 4, 4, 3 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Leon",
       "note" : "",
       "panicking" : false,
@@ -200,7 +200,7 @@
     "rTajeEE49FX500qZnwBP8WByflW2" : {
       "absent" : false,
       "availabilityArray" : [ 1, 1, 3, 1, 4, 2, 1 ],
-      "lastUpdated" : 1521533100000,
+      "lastUpdated" : 1521817220000,
       "name" : "Sarah",
       "note" : "",
       "panicking" : false
